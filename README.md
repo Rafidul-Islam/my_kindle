@@ -12,8 +12,41 @@ Everything is on-device. No account, no network, no analytics.
 ## Requirements
 
 - macOS with **Xcode 16** or newer
-- iOS 18.0+ (iPhone only)
-- No third-party dependencies
+- iOS 18.0+ simulator runtime (iPhone only)
+- No third-party dependencies — nothing to install, no CocoaPods, no SPM
+
+## First-time setup
+
+On a fresh Mac, after cloning:
+
+```bash
+# 1. Clone
+git clone git@github.com:Rafidul-Islam/my_kindle.git
+cd my_kindle
+
+# 2. Confirm you have Xcode 16+ (must print a 16.x or 17.x version)
+xcodebuild -version
+
+# 3. Make sure the iOS 18 simulator runtime is installed
+xcodebuild -downloadPlatform iOS
+
+# 4. Open the project
+open my_kindle.xcodeproj
+```
+
+In Xcode, select the **my_kindle** scheme and any **iPhone** simulator, then
+press **Run** (⌘R). The scheme is shared and already checked in — you do not
+create one.
+
+**Nothing else is needed for the Simulator.** Do not run `tools/genproj.py`
+unless you are adding or removing files; the project file is committed and ready
+to open.
+
+If `open` fails, the usual cause is no Xcode licence accepted yet — run
+`sudo xcodebuild -license accept` once.
+
+To run on a **physical device** instead, set your own bundle ID and team first —
+see [Signing and bundle ID](#signing-and-bundle-id).
 
 ## Build and run
 
