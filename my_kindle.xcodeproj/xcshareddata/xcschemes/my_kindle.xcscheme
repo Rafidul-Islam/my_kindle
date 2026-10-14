@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1EAF6B1C573B98DE03975706"
-               BuildableName = "Inkwell.app"
-               BlueprintName = "Inkwell"
-               ReferencedContainer = "container:Inkwell.xcodeproj">
+               BuildableName = "my_kindle.app"
+               BlueprintName = "my_kindle"
+               ReferencedContainer = "container:my_kindle.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "153CD4E96CF9727670E94A44"
-               BuildableName = "InkwellTests.xctest"
-               BlueprintName = "InkwellTests"
-               ReferencedContainer = "container:Inkwell.xcodeproj">
+               BuildableName = "my_kindleTests.xctest"
+               BlueprintName = "my_kindleTests"
+               ReferencedContainer = "container:my_kindle.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1EAF6B1C573B98DE03975706"
-            BuildableName = "Inkwell.app"
-            BlueprintName = "Inkwell"
-            ReferencedContainer = "container:Inkwell.xcodeproj">
+            BuildableName = "my_kindle.app"
+            BlueprintName = "my_kindle"
+            ReferencedContainer = "container:my_kindle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1EAF6B1C573B98DE03975706"
-            BuildableName = "Inkwell.app"
-            BlueprintName = "Inkwell"
-            ReferencedContainer = "container:Inkwell.xcodeproj">
+            BuildableName = "my_kindle.app"
+            BlueprintName = "my_kindle"
+            ReferencedContainer = "container:my_kindle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

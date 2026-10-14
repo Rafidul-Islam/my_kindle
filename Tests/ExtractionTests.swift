@@ -1,6 +1,6 @@
 import XCTest
 import PDFKit
-@testable import Inkwell
+@testable import my_kindle
 
 @MainActor
 final class ExtractionTests: XCTestCase {

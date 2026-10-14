@@ -20,7 +20,7 @@ struct LibraryView: View {
                     shelf
                 }
             }
-            .navigationTitle("Inkwell")
+            .navigationTitle("My Kindle")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {

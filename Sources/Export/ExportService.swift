@@ -190,7 +190,7 @@ enum ExportService {
         let format = UIGraphicsPDFRendererFormat()
         format.documentInfo = [
             kCGPDFContextTitle as String: book.title,
-            kCGPDFContextCreator as String: "Inkwell"
+            kCGPDFContextCreator as String: "My Kindle"
         ]
         let renderer = UIGraphicsPDFRenderer(bounds: CGRect(origin: .zero, size: pageSize), format: format)
 

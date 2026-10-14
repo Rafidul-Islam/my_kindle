@@ -1,4 +1,4 @@
-# Inkwell
+# My Kindle
 
 An iPhone PDF reader that re-typesets books so they read like a Kindle.
 
@@ -18,32 +18,80 @@ Everything is on-device. No account, no network, no analytics.
 ## Build and run
 
 ```bash
-open Inkwell.xcodeproj
+open my_kindle.xcodeproj
 ```
 
-Pick the **Inkwell** scheme and any iPhone simulator, then press Run. To run the
+Pick the **my_kindle** scheme and any iPhone simulator, then press Run. To run the
 tests, press `⌘U`.
 
-To build from the command line:
+To build and test from the command line:
 
 ```bash
-xcodebuild -project Inkwell.xcodeproj -scheme Inkwell \
+# Build
+xcodebuild -project my_kindle.xcodeproj -scheme my_kindle \
   -destination 'platform=iOS Simulator,name=iPhone 16' build
+
+# Test
+xcodebuild -project my_kindle.xcodeproj -scheme my_kindle \
+  -destination 'platform=iOS Simulator,name=iPhone 16' test
 ```
 
-## Adding or removing source files
+## Workflow
 
-`Inkwell.xcodeproj` is **generated**, not hand-edited. After adding a file under
-`Sources/` or `Tests/`, regenerate it:
+The loop is three commands. Edit code, regenerate the project, build.
 
 ```bash
-python3 tools/genproj.py
-python3 tools/checkproj.py   # optional structural check
+python3 tools/genproj.py      # 1. after adding or removing files
+python3 tools/checkproj.py    # 2. optional structural check
+open my_kindle.xcodeproj      # 3. build and run
 ```
 
-This keeps the project file reproducible and free of merge conflicts. The
-generator emits a classic (objectVersion 56) pbxproj, so the project also opens in
-older Xcode versions and is parseable by fastlane and CocoaPods.
+Step 1 matters because `my_kindle.xcodeproj` is **generated**, not hand-edited:
+adding a file under `Sources/` or `Tests/` does nothing on its own until the
+project is regenerated. This keeps the project file reproducible and free of merge
+conflicts. The generator emits a classic (objectVersion 56) pbxproj, so the project
+also opens in older Xcode versions and is parseable by fastlane and CocoaPods.
+
+Because the project file is rebuilt from scratch, never make changes inside Xcode
+that you need to keep — signing, bundle IDs and per-machine settings belong in
+`Config/Local.xcconfig` (see below), which lives outside the generated project.
+
+## Signing and bundle ID
+
+Building for the **Simulator** needs no setup at all.
+
+To run on a **physical device**, Apple requires a bundle ID registered to *your*
+team. The shared `com.rafid.my_kindle` belongs to the upstream author, so you
+cannot sign for it — the build fails with a provisioning error. Give yourself a
+unique one:
+
+```bash
+cp Config/Local.xcconfig.example Config/Local.xcconfig
+```
+
+Then edit `Config/Local.xcconfig`:
+
+```
+MY_KINDLE_BUNDLE_ID = com.yourname.my_kindle
+DEVELOPMENT_TEAM    = ABCDE12345
+```
+
+Your Team ID is in Xcode ▸ Settings ▸ Accounts, or the **Team** picker under
+target `my_kindle` ▸ Signing & Capabilities. A free personal Apple ID is enough
+for a 7-day profile; a paid account lasts a year.
+
+`Config/Local.xcconfig` is **gitignored**, so your Team ID never reaches the repo
+and never appears in a commit. You only need it for device builds — a simulator
+build works without the file existing.
+
+Why an xcconfig and not Xcode's UI: `my_kindle.xcodeproj` is generated, so any
+change you make to signing inside Xcode is silently overwritten the next time
+someone runs `tools/genproj.py`. The `.xcconfig` sits outside the generated
+project, so your overrides survive regeneration.
+
+The test target derives its bundle ID automatically — override
+`MY_KINDLE_BUNDLE_ID` once and both the app (`…my_kindle`) and the tests
+(`…my_kindle.tests`) follow.
 
 ## Continuous integration
 
@@ -103,6 +151,7 @@ Sources/
   Export/     Markdown and annotated-PDF export
   Views/      library shelf, covers
 Tests/        engine and store tests
+Config/      shared build settings; per-machine Local.xcconfig is gitignored
 tools/        project generator and checker
 ```
 

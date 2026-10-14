@@ -1,0 +1,24 @@
+// Shared build settings for my_kindle.
+//
+// Do not put machine-specific values here. This file is committed and shared by
+// everyone, so anything you add becomes everyone's default.
+//
+// For your own signing identity (Apple Team ID, a bundle ID only you can sign),
+// copy the example next to this file:
+//
+//     cp Config/Local.xcconfig.example Config/Local.xcconfig
+//
+// Local.xcconfig is gitignored and is #included at the bottom of this file, so
+// its values win without you having to touch the generated .xcodeproj — which
+// would be overwritten by tools/genproj.py anyway.
+
+// Base bundle ID. The test target derives its own from this
+// (com.rafid.my_kindle.tests), so overriding it in Local.xcconfig updates both.
+MY_KINDLE_BUNDLE_ID = com.rafid.my_kindle
+
+// "Automatic" lets Xcode create provisioning profiles for you. Switch to
+// "Manual" in Local.xcconfig if you supply your own profiles.
+CODE_SIGN_STYLE = Automatic
+
+// Keep this last: Local.xcconfig must override the settings above.
+#include? "Local.xcconfig"

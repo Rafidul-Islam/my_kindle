@@ -2,7 +2,7 @@ import UIKit
 
 extension NSAttributedString.Key {
     /// Source PDF page index for the run — powers progress, TOC and the page counter.
-    static let inkwellPageIndex = NSAttributedString.Key("InkwellPageIndex")
+    static let myKindlePageIndex = NSAttributedString.Key("MyKindlePageIndex")
 }
 
 /// Builds the drawable attributed string for one book at one set of reader settings.
@@ -110,7 +110,7 @@ enum ReflowTypography {
                 style.alignment = .center
                 style.paragraphSpacing = CGFloat(settings.extraLineSpacing * 2)
                 output.addAttributes(
-                    [.paragraphStyle: style, .inkwellPageIndex: run.pageIndex],
+                    [.paragraphStyle: style, .myKindlePageIndex: run.pageIndex],
                     range: NSRange(location: length, length: output.length - length)
                 )
                 continue
@@ -136,7 +136,7 @@ enum ReflowTypography {
                 [
                     .font: font,
                     .paragraphStyle: paragraphStyle,
-                    .inkwellPageIndex: run.pageIndex
+                    .myKindlePageIndex: run.pageIndex
                 ],
                 range: NSRange(location: length, length: output.length - length)
             )

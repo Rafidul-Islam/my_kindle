@@ -1,5 +1,5 @@
 import XCTest
-@testable import Inkwell
+@testable import my_kindle
 
 @MainActor
 final class PaginationTests: XCTestCase {
@@ -19,7 +19,7 @@ final class PaginationTests: XCTestCase {
                 .font: font,
                 .paragraphStyle: style
             ]))
-            output.addAttribute(.inkwellPageIndex, value: index / 3, range: NSRange(location: start, length: output.length - start))
+            output.addAttribute(.myKindlePageIndex, value: index / 3, range: NSRange(location: start, length: output.length - start))
         }
         return output
     }

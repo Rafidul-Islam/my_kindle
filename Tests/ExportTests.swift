@@ -1,5 +1,5 @@
 import XCTest
-@testable import Inkwell
+@testable import my_kindle
 
 @MainActor
 final class ExportTests: XCTestCase {

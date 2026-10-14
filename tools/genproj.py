@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generates Inkwell.xcodeproj from the Sources/ and Tests/ directories.
+"""Generates my_kindle.xcodeproj from the Sources/ and Tests/ directories.
 
 Run this after adding or removing a source file:
 
@@ -17,19 +17,28 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PROJECT_NAME = "Inkwell"
-TEST_TARGET = "InkwellTests"
-BUNDLE_ID = "com.rafid.inkwell"
+PROJECT_NAME = "my_kindle"
+TEST_TARGET = "my_kindleTests"
 DEPLOYMENT_TARGET = "18.0"
 XCODE_VERSION = "1600"
 
 PROJECT_DIR = ROOT / f"{PROJECT_NAME}.xcodeproj"
 SOURCES_ROOT = ROOT / "Sources"
 TESTS_ROOT = ROOT / "Tests"
+CONFIG_ROOT = ROOT / "Config"
+
+# The xcconfig every build configuration is based on. Signing values are
+# deliberately NOT inlined into the pbxproj: they live in Config/Shared.xcconfig
+# so a developer can override them in a gitignored Config/Local.xcconfig. An
+# override made in Xcode's UI would be lost the next time this script runs.
+# The default bundle ID is therefore defined there, not here.
+SHARED_CONFIG = "Config/Shared.xcconfig"
+BUNDLE_ID_SETTING = "MY_KINDLE_BUNDLE_ID"
 
 FILE_TYPES = {
     ".swift": ("sourcecode.swift", True),
     ".plist": ("text.plist.xml", False),
+    ".xcconfig": ("text.xcconfig", False),
     ".xcassets": ("folder.assetcatalog", "resources"),
     ".json": ("text.json", "resources"),
     ".md": ("net.daringfireball.markdown", False),
@@ -121,9 +130,19 @@ def generate() -> str:
     project = Project()
     source_files = walk(SOURCES_ROOT, "Sources")
     test_files = walk(TESTS_ROOT, "Tests")
+    # Only these two Config files belong in the committed project, listed
+    # explicitly rather than walked. A developer's gitignored Config/Local.xcconfig
+    # must never be added, or regenerating would produce a spurious diff for
+    # everyone else. UUIDs come from a hash of the path, so this stays stable.
+    config_files = [
+        (rel, ROOT / rel)
+        for rel in (SHARED_CONFIG, "Config/Local.xcconfig.example")
+        if (ROOT / rel).exists()
+    ]
 
     project.add_files(source_files)
     project.add_files(test_files)
+    project.add_files(config_files)
 
     app_target = uuid_for("target::app")
     test_target = uuid_for("target::tests")
@@ -135,6 +154,7 @@ def generate() -> str:
 
     sources_group = uuid_for("group::Sources")
     tests_group = uuid_for("group::Tests")
+    config_group = uuid_for("group::Config")
     resources_group = uuid_for("group::Resources")
 
     app_sources_phase = uuid_for("phase::app::sources")
@@ -223,6 +243,7 @@ def generate() -> str:
     all_groups: dict[tuple[str, ...], str] = {
         ("Sources",): sources_group,
         ("Tests",): tests_group,
+        ("Config",): config_group,
     }
 
     def group_uuid(path_tuple) -> str:
@@ -270,6 +291,7 @@ def generate() -> str:
 
     render_group(sources_group, "Sources", "Sources", "")
     render_group(tests_group, "Tests", "Tests", "")
+    render_group(config_group, "Config", "Config", "")
     for tuple_path, gid in sorted(all_groups.items(), key=lambda item: len(item[0])):
         if len(tuple_path) == 1:
             continue
@@ -282,6 +304,7 @@ def generate() -> str:
     out.emit("\t\t\tchildren = (")
     out.emit(f"\t\t\t\t{sources_group} /* Sources */,")
     out.emit(f"\t\t\t\t{tests_group} /* Tests */,")
+    out.emit(f"\t\t\t\t{config_group} /* Config */,")
     out.emit(f"\t\t\t\t{products_group} /* Products */,")
     out.emit("\t\t\t);")
     out.emit("\t\t\tsourceTree = \"<group>\";")
@@ -456,14 +479,13 @@ def generate() -> str:
     shared_app = {
         "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
         "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor",
-        "CODE_SIGN_STYLE": "Automatic",
         "CURRENT_PROJECT_VERSION": "1",
         "ENABLE_PREVIEWS": "YES",
         "GENERATE_INFOPLIST_FILE": "NO",
         "INFOPLIST_FILE": info_plist_rel,
         "LD_RUNPATH_SEARCH_PATHS": '"$(inherited) @executable_path/Frameworks"',
         "MARKETING_VERSION": "1.0",
-        "PRODUCT_BUNDLE_IDENTIFIER": BUNDLE_ID,
+        "PRODUCT_BUNDLE_IDENTIFIER": f'"$({BUNDLE_ID_SETTING})"',
         "PRODUCT_NAME": '"$(TARGET_NAME)"',
         "SUPPORTS_MACCATALYST": "NO",
         "SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD": "NO",
@@ -475,11 +497,10 @@ def generate() -> str:
 
     shared_tests = {
         "BUNDLE_LOADER": '"$(TEST_HOST)"',
-        "CODE_SIGN_STYLE": "Automatic",
         "CURRENT_PROJECT_VERSION": "1",
         "GENERATE_INFOPLIST_FILE": "YES",
         "MARKETING_VERSION": "1.0",
-        "PRODUCT_BUNDLE_IDENTIFIER": f"{BUNDLE_ID}.tests",
+        "PRODUCT_BUNDLE_IDENTIFIER": f'"$({BUNDLE_ID_SETTING}).tests"',
         "PRODUCT_NAME": '"$(TARGET_NAME)"',
         "SWIFT_EMIT_LOC_STRINGS": "NO",
         "TARGETED_DEVICE_FAMILY": "1",
@@ -488,10 +509,12 @@ def generate() -> str:
     tests_debug_settings = dict(shared_tests)
     tests_release_settings = dict(shared_tests)
 
-    def render_config(uuid: str, name: str, settings: dict[str, str]) -> None:
+    def render_config(uuid: str, name: str, settings: dict[str, str], base_config: str | None = None) -> None:
         out.emit("/* Begin XCBuildConfiguration section */")
         out.emit(f"\t\t{uuid} /* {name} */ = {{")
         out.emit("\t\t\tisa = XCBuildConfiguration;")
+        if base_config:
+            out.emit(f"\t\t\tbaseConfigurationReference = {base_config} /* Shared.xcconfig */;")
         out.emit("\t\t\tbuildSettings = {")
         for key in sorted(settings):
             out.emit(f"\t\t\t\t{key} = {settings[key]};")
@@ -501,8 +524,9 @@ def generate() -> str:
         out.emit("/* End XCBuildConfiguration section */")
         out.emit()
 
-    render_config(project_debug, "Debug", debug_project)
-    render_config(project_release, "Release", release_project)
+    base_config = project.file_refs.get(SHARED_CONFIG)
+    render_config(project_debug, "Debug", debug_project, base_config)
+    render_config(project_release, "Release", release_project, base_config)
     render_config(app_debug, "Debug", app_debug_settings)
     render_config(app_release, "Release", app_release_settings)
     render_config(test_debug, "Debug", tests_debug_settings)

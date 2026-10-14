@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct InkwellApp: App {
+struct MyKindleApp: App {
 
     @State private var store = LibraryStore()
     @Environment(\.scenePhase) private var scenePhase
@@ -21,7 +21,7 @@ struct InkwellApp: App {
         }
     }
 
-    /// Handles "Open in Inkwell…" from Files, Mail or Safari.
+    /// Handles "Open in My Kindle…" from Files, Mail or Safari.
     private func handleIncoming(_ url: URL) {
         let needsScope = url.startAccessingSecurityScopedResource()
         defer { if needsScope { url.stopAccessingSecurityScopedResource() } }

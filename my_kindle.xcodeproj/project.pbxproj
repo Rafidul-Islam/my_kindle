@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EF54DB7702701FACDC5E73A /* AppPaths.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = F5C88043EA127754E25B6FB8 /* AppPaths.swift */; };
-		B79E0C9CB552E582A526096E /* InkwellApp.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 21E88FDBD671A4924AE1C9BD /* InkwellApp.swift */; };
+		951B794D88C4E29E6F4238E7 /* MyKindleApp.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 91ACE15C1191E7C5E2118942 /* MyKindleApp.swift */; };
 		B34AD62C5F4B9B8F270BC5BF /* LayoutAnalysis.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = F2423BD18660CE2B696494AF /* LayoutAnalysis.swift */; };
 		6A88F363939CC982DDD48AD2 /* PDFTextExtractor.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = F41279C5A905ED8D453407F7 /* PDFTextExtractor.swift */; };
 		CD4A5591CCDE1CC46F9A556A /* Paginator.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 7442924AF3D313DAA4C48444 /* Paginator.swift */; };
@@ -49,15 +49,17 @@
 			containerPortal = B2BAB539C9D4DFD6131F3ED0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1EAF6B1C573B98DE03975706;
-			remoteInfo = Inkwell;
+			remoteInfo = my_kindle;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A612554AFBDBB78BBE69496E /* Inkwell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inkwell.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01E150132E130BC0C2427E78 /* InkwellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InkwellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A612554AFBDBB78BBE69496E /* my_kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_kindle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E150132E130BC0C2427E78 /* my_kindleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = my_kindleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8228140F758B62D8D62414 /* Local.xcconfig.example */ = {isa = PBXFileReference; explicitFileType = text; path = Local.xcconfig.example; sourceTree = "<group>"; };
+		3FCF737CE27969463DEE932F /* Shared.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		F5C88043EA127754E25B6FB8 /* AppPaths.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AppPaths.swift; sourceTree = "<group>"; };
-		21E88FDBD671A4924AE1C9BD /* InkwellApp.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = InkwellApp.swift; sourceTree = "<group>"; };
+		91ACE15C1191E7C5E2118942 /* MyKindleApp.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = MyKindleApp.swift; sourceTree = "<group>"; };
 		F2423BD18660CE2B696494AF /* LayoutAnalysis.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = LayoutAnalysis.swift; sourceTree = "<group>"; };
 		F41279C5A905ED8D453407F7 /* PDFTextExtractor.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = PDFTextExtractor.swift; sourceTree = "<group>"; };
 		7442924AF3D313DAA4C48444 /* Paginator.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
@@ -148,11 +150,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXGroup section */
+		88427A1B1B4BBADDE600D482 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6D8228140F758B62D8D62414 /* Local.xcconfig.example */,
+				3FCF737CE27969463DEE932F /* Shared.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
 		09EB779E23AA3E01CFDE942A /* App */ = {
 			isa = PBXGroup;
 			children = (
 				F5C88043EA127754E25B6FB8 /* AppPaths.swift */,
-				21E88FDBD671A4924AE1C9BD /* InkwellApp.swift */,
+				91ACE15C1191E7C5E2118942 /* MyKindleApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -283,6 +297,7 @@
 			children = (
 				0E2C2D148CD03FDE80E5926A /* Sources */,
 				8AEC345AF92FEBA935540FBF /* Tests */,
+				88427A1B1B4BBADDE600D482 /* Config */,
 				433D647A17039DC680DEAE8F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -290,7 +305,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1EAF6B1C573B98DE03975706 /* Inkwell */ = {
+		1EAF6B1C573B98DE03975706 /* my_kindle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C57B8E19E49BC7C33EC0693D;
 			buildPhases = (
@@ -302,12 +317,12 @@
 			);
 			dependencies = (
 			);
-			name = Inkwell;
-			productName = Inkwell;
-			productReference = A612554AFBDBB78BBE69496E /* Inkwell.app */;
+			name = my_kindle;
+			productName = my_kindle;
+			productReference = A612554AFBDBB78BBE69496E /* my_kindle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		153CD4E96CF9727670E94A44 /* InkwellTests */ = {
+		153CD4E96CF9727670E94A44 /* my_kindleTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF7A738ABAC4119AE158E1D4;
 			buildPhases = (
@@ -320,9 +335,9 @@
 			dependencies = (
 				49854C338A5A232B950649D3 /* PBXTargetDependency */,
 			);
-			name = InkwellTests;
-			productName = InkwellTests;
-			productReference = 01E150132E130BC0C2427E78 /* InkwellTests.xctest */;
+			name = my_kindleTests;
+			productName = my_kindleTests;
+			productReference = 01E150132E130BC0C2427E78 /* my_kindleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -357,8 +372,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1EAF6B1C573B98DE03975706 /* Inkwell */,
-				153CD4E96CF9727670E94A44 /* InkwellTests */,
+				1EAF6B1C573B98DE03975706 /* my_kindle */,
+				153CD4E96CF9727670E94A44 /* my_kindleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -390,7 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EF54DB7702701FACDC5E73A /* AppPaths.swift in Sources */,
-				B79E0C9CB552E582A526096E /* InkwellApp.swift in Sources */,
+				951B794D88C4E29E6F4238E7 /* MyKindleApp.swift in Sources */,
 				B34AD62C5F4B9B8F270BC5BF /* LayoutAnalysis.swift in Sources */,
 				6A88F363939CC982DDD48AD2 /* PDFTextExtractor.swift in Sources */,
 				CD4A5591CCDE1CC46F9A556A /* Paginator.swift in Sources */,
@@ -440,7 +455,7 @@
 /* Begin PBXTargetDependency section */
 		49854C338A5A232B950649D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1EAF6B1C573B98DE03975706 /* Inkwell */;
+			target = 1EAF6B1C573B98DE03975706 /* my_kindle */;
 			targetProxy = FF8100DB899D8BF1D517F5BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -448,6 +463,7 @@
 /* Begin XCBuildConfiguration section */
 		BCD2CDAF0FF8707D37CECEC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCF737CE27969463DEE932F /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -477,6 +493,7 @@
 /* Begin XCBuildConfiguration section */
 		31F88ED80F52B5272F4E901E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCF737CE27969463DEE932F /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -507,14 +524,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Sources/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(MY_KINDLE_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -531,14 +547,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Sources/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(MY_KINDLE_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -554,15 +569,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(MY_KINDLE_BUNDLE_ID).tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inkwell.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inkwell";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/my_kindle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/my_kindle";
 			};
 			name = Debug;
 		};
@@ -573,22 +587,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(MY_KINDLE_BUNDLE_ID).tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inkwell.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inkwell";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/my_kindle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/my_kindle";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		887D4B5F61EA6AAAF609F3AC /* Build configuration list for PBXProject "Inkwell" */ = {
+		887D4B5F61EA6AAAF609F3AC /* Build configuration list for PBXProject "my_kindle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BCD2CDAF0FF8707D37CECEC7 /* Debug */,
@@ -597,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C57B8E19E49BC7C33EC0693D /* Build configuration list for PBXNativeTarget "Inkwell" */ = {
+		C57B8E19E49BC7C33EC0693D /* Build configuration list for PBXNativeTarget "my_kindle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8084D1E8212BC9FC71BA7476 /* Debug */,
@@ -606,7 +619,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF7A738ABAC4119AE158E1D4 /* Build configuration list for PBXNativeTarget "InkwellTests" */ = {
+		CF7A738ABAC4119AE158E1D4 /* Build configuration list for PBXNativeTarget "my_kindleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				424437003196596881C04385 /* Debug */,

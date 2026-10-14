@@ -1,0 +1,18 @@
+// Copy to Local.xcconfig and edit. This file is gitignored, so your Team ID
+// never reaches the repository.
+//
+//     cp Config/Local.xcconfig.example Config/Local.xcconfig
+//
+// Nothing here is needed to build for the Simulator. You only need it to run on
+// a physical device, where Apple requires a bundle ID registered to your team —
+// the shared com.rafid.my_kindle ID belongs to the upstream author and cannot
+// be signed by anyone else.
+
+// Any bundle ID unique to you. This is the usual line to change.
+MY_KINDLE_BUNDLE_ID = com.yourname.my_kindle
+
+// Your Apple Developer Team ID. Xcode ▸ Settings ▸ Accounts ▸ Manage Certificates
+// shows it next to your team, and it is the value in the "Team" picker under
+// target my_kindle ▸ Signing & Capabilities. A free personal Apple ID is enough
+// for a 7-day provisioning profile; a paid Developer account gives you a year.
+DEVELOPMENT_TEAM =

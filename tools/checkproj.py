@@ -15,8 +15,15 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PBXPROJ = ROOT / "Inkwell.xcodeproj" / "project.pbxproj"
-SCHEME = ROOT / "Inkwell.xcodeproj" / "xcshareddata" / "xcschemes" / "Inkwell.xcscheme"
+PROJECT_NAME = "my_kindle"
+PBXPROJ = ROOT / f"{PROJECT_NAME}.xcodeproj" / "project.pbxproj"
+SCHEME = (
+    ROOT
+    / f"{PROJECT_NAME}.xcodeproj"
+    / "xcshareddata"
+    / "xcschemes"
+    / f"{PROJECT_NAME}.xcscheme"
+)
 
 OBJECT_RE = re.compile(r"^\t\t([0-9A-F]{24})\s*(?:/\*.*?\*/)?\s*=\s*\{", re.MULTILINE)
 UUID_RE = re.compile(r"\b([0-9A-F]{24})\b")

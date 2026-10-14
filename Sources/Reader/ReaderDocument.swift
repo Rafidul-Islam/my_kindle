@@ -274,7 +274,7 @@ final class ReaderDocument {
               let model else { return nil }
         let probe = min(slice.start, attributed.length - 1)
         guard probe >= 0 else { return model.pageStartOffsets.first }
-        if let page = attributed.attribute(.inkwellPageIndex, at: probe, effectiveRange: nil) as? Int {
+        if let page = attributed.attribute(.myKindlePageIndex, at: probe, effectiveRange: nil) as? Int {
             return page
         }
         return model.pageStartOffsets.first ?? 0

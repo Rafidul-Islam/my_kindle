@@ -21,13 +21,13 @@ jobs:
         run: python3 tools/genproj.py
 
       - name: Show generated schemes
-        run: xcodebuild -list -project Inkwell.xcodeproj
+        run: xcodebuild -list -project my_kindle.xcodeproj
 
       - name: Build
         run: |
           xcodebuild \
-            -project Inkwell.xcodeproj \
-            -scheme Inkwell \
+            -project my_kindle.xcodeproj \
+            -scheme my_kindle \
             -configuration Debug \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
             CODE_SIGNING_ALLOWED=NO \
@@ -36,8 +36,8 @@ jobs:
       - name: Test
         run: |
           xcodebuild \
-            -project Inkwell.xcodeproj \
-            -scheme Inkwell \
+            -project my_kindle.xcodeproj \
+            -scheme my_kindle \
             -configuration Debug \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
             CODE_SIGNING_ALLOWED=NO \

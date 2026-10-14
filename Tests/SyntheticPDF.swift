@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import PDFKit
 import XCTest
-@testable import Inkwell
+@testable import my_kindle
 
 /// Builds PDFs in-memory so the engine tests do not need bundled fixtures.
 enum SyntheticPDF {
@@ -68,7 +68,7 @@ enum SyntheticPDF {
 
     static func temporaryURL(_ data: Data, name: String) throws -> URL {
         let directory = FileManager.default.temporaryDirectory
-            .appendingPathComponent("InkwellTests", isDirectory: true)
+            .appendingPathComponent("my_kindleTests", isDirectory: true)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         let url = directory.appendingPathComponent("\(UUID().uuidString)-\(name)")
         try data.write(to: url)
