@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EF54DB7702701FACDC5E73A /* AppPaths.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = F5C88043EA127754E25B6FB8 /* AppPaths.swift */; };
+		B79E0C9CB552E582A526096E /* InkwellApp.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 21E88FDBD671A4924AE1C9BD /* InkwellApp.swift */; };
+		B34AD62C5F4B9B8F270BC5BF /* LayoutAnalysis.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = F2423BD18660CE2B696494AF /* LayoutAnalysis.swift */; };
+		6A88F363939CC982DDD48AD2 /* PDFTextExtractor.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = F41279C5A905ED8D453407F7 /* PDFTextExtractor.swift */; };
+		CD4A5591CCDE1CC46F9A556A /* Paginator.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 7442924AF3D313DAA4C48444 /* Paginator.swift */; };
+		12BA34EC649533C877B2E24F /* ReaderTheme.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 1C34F6FF797A8E02BA433CF6 /* ReaderTheme.swift */; };
+		3E461E4134BBBBAABEDBBE6D /* ReflowBuilder.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 998F20B8D68E5254F2E48D48 /* ReflowBuilder.swift */; };
+		FD38CD89D4CDFE3800D91FC7 /* ReflowCache.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = B3C531070D6A5180BB6A0F14 /* ReflowCache.swift */; };
+		11AA07937A2CD1D5EF1B074C /* ReflowModel.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 2C40DB942EA8947E1A206DC0 /* ReflowModel.swift */; };
+		C61D71BFB21D034E80D6AB34 /* ReflowRenderer.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 77BC4B0D4F9A1A3F6643FC10 /* ReflowRenderer.swift */; };
+		FD96AE3C083A54ADF7C36B55 /* ReflowTypography.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 5C717774596CD3E52007529F /* ReflowTypography.swift */; };
+		89E9136E60D28DD71F4955F7 /* ExportService.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 3862EFB2FA2E5E5052B498DA /* ExportService.swift */; };
+		2DFEF2220999052FDA88F893 /* ImportService.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 6601DC8E315E52C326315668 /* ImportService.swift */; };
+		A76AD1204D27217395A0FC1D /* Annotation.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 14E74EA721FCFA148009E3C1 /* Annotation.swift */; };
+		399A226D308E8EB83E594E43 /* Book.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 42D9D8C8399B0066A53B7ABC /* Book.swift */; };
+		A99B0F6493938FFDBFFDF189 /* Locator.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 51AF008DD61CB284544A5C18 /* Locator.swift */; };
+		6B0AAA471002F205AF91BC0D /* ReaderSettings.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = F40C271CB78F7AC81CC3AE33 /* ReaderSettings.swift */; };
+		E025ACDC541C8F5568103EFD /* ContentsSheet.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 29596FFFE2CC84FF71BABB98 /* ContentsSheet.swift */; };
+		D79D4CAA727708ED79DB2C3E /* HighlightsSheet.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 74DDAFB2D29D17030A605545 /* HighlightsSheet.swift */; };
+		629C56430DDB2228D04E58B3 /* PDFPageContainer.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = ECAE1C9DC303C4EE87928EC5 /* PDFPageContainer.swift */; };
+		9740C43BE3A64086754F7BEB /* ReaderDocument.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = A06A9262F1F2015B3BFC5248 /* ReaderDocument.swift */; };
+		0CDC5328C0E6319D3CA7A933 /* ReaderSettingsSheet.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 6842E90A7823235EB5DF2D9C /* ReaderSettingsSheet.swift */; };
+		56E0753B4FED10748FC3F4C8 /* ReaderView.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 0848AEF7EC517DFAE6650AFE /* ReaderView.swift */; };
+		417CB0C8A197B992BBFDFC0F /* ReflowPageContainer.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = A264C31BF426782D9E3F80B2 /* ReflowPageContainer.swift */; };
+		9397EF392464A7FFDDC8E01F /* JSONCoders.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 6BC4448FEBBC44A26879F235 /* JSONCoders.swift */; };
+		A34ACEFA546CACD3CAF25AC1 /* LibraryStore.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = C6098A7135B1B9D2BE706161 /* LibraryStore.swift */; };
+		A2123764709EE37D8B1A951E /* CoverImage.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 02FA4F3EFDB5FBF6CD2C2644 /* CoverImage.swift */; };
+		F9E0BADFA6DBCF70682EFCA2 /* LibraryView.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = BD00D5E36B29AE1DD1137AF8 /* LibraryView.swift */; };
+		6B699C8FAAAC409E5A460A42 /* ExportTests.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 9F3D4F2845888A6042D36EB8 /* ExportTests.swift */; };
+		24D3B955CAB44EA470C7582B /* ExtractionTests.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 4B4C4BCF2D8D0A546A8C0A37 /* ExtractionTests.swift */; };
+		A8BFE95A83D1D25082E0DC29 /* PaginationTests.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 0317A3DD9556B040802F4468 /* PaginationTests.swift */; };
+		0395672FC7158849A623BA8E /* ReflowModelTests.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 6D5F420BEF26622AB3049D4A /* ReflowModelTests.swift */; };
+		D8A916D8551AFA0C1085424B /* SyntheticPDF.swift in Build Phase */ = {isa = PBXBuildFile; fileRef = 6484D9E56E8450240BA59405 /* SyntheticPDF.swift */; };
+		DAEEF900FDB178696055791F /* Assets.xcassets in Build Phase */ = {isa = PBXBuildFile; fileRef = 68D468A6CA1168E9C8DDA914 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF8100DB899D8BF1D517F5BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2BAB539C9D4DFD6131F3ED0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EAF6B1C573B98DE03975706;
+			remoteInfo = Inkwell;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A612554AFBDBB78BBE69496E /* Inkwell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inkwell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E150132E130BC0C2427E78 /* InkwellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InkwellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5C88043EA127754E25B6FB8 /* AppPaths.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AppPaths.swift; sourceTree = "<group>"; };
+		21E88FDBD671A4924AE1C9BD /* InkwellApp.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = InkwellApp.swift; sourceTree = "<group>"; };
+		F2423BD18660CE2B696494AF /* LayoutAnalysis.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = LayoutAnalysis.swift; sourceTree = "<group>"; };
+		F41279C5A905ED8D453407F7 /* PDFTextExtractor.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = PDFTextExtractor.swift; sourceTree = "<group>"; };
+		7442924AF3D313DAA4C48444 /* Paginator.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
+		1C34F6FF797A8E02BA433CF6 /* ReaderTheme.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReaderTheme.swift; sourceTree = "<group>"; };
+		998F20B8D68E5254F2E48D48 /* ReflowBuilder.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReflowBuilder.swift; sourceTree = "<group>"; };
+		B3C531070D6A5180BB6A0F14 /* ReflowCache.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReflowCache.swift; sourceTree = "<group>"; };
+		2C40DB942EA8947E1A206DC0 /* ReflowModel.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReflowModel.swift; sourceTree = "<group>"; };
+		77BC4B0D4F9A1A3F6643FC10 /* ReflowRenderer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReflowRenderer.swift; sourceTree = "<group>"; };
+		5C717774596CD3E52007529F /* ReflowTypography.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReflowTypography.swift; sourceTree = "<group>"; };
+		3862EFB2FA2E5E5052B498DA /* ExportService.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		6601DC8E315E52C326315668 /* ImportService.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ImportService.swift; sourceTree = "<group>"; };
+		14E74EA721FCFA148009E3C1 /* Annotation.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		42D9D8C8399B0066A53B7ABC /* Book.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		51AF008DD61CB284544A5C18 /* Locator.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		F40C271CB78F7AC81CC3AE33 /* ReaderSettings.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReaderSettings.swift; sourceTree = "<group>"; };
+		29596FFFE2CC84FF71BABB98 /* ContentsSheet.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ContentsSheet.swift; sourceTree = "<group>"; };
+		74DDAFB2D29D17030A605545 /* HighlightsSheet.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = HighlightsSheet.swift; sourceTree = "<group>"; };
+		ECAE1C9DC303C4EE87928EC5 /* PDFPageContainer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = PDFPageContainer.swift; sourceTree = "<group>"; };
+		A06A9262F1F2015B3BFC5248 /* ReaderDocument.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReaderDocument.swift; sourceTree = "<group>"; };
+		6842E90A7823235EB5DF2D9C /* ReaderSettingsSheet.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReaderSettingsSheet.swift; sourceTree = "<group>"; };
+		0848AEF7EC517DFAE6650AFE /* ReaderView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		A264C31BF426782D9E3F80B2 /* ReflowPageContainer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReflowPageContainer.swift; sourceTree = "<group>"; };
+		68D468A6CA1168E9C8DDA914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91029AAA1687A8CB3DBA3C51 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BC4448FEBBC44A26879F235 /* JSONCoders.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = JSONCoders.swift; sourceTree = "<group>"; };
+		C6098A7135B1B9D2BE706161 /* LibraryStore.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = LibraryStore.swift; sourceTree = "<group>"; };
+		02FA4F3EFDB5FBF6CD2C2644 /* CoverImage.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = CoverImage.swift; sourceTree = "<group>"; };
+		BD00D5E36B29AE1DD1137AF8 /* LibraryView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		9F3D4F2845888A6042D36EB8 /* ExportTests.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ExportTests.swift; sourceTree = "<group>"; };
+		4B4C4BCF2D8D0A546A8C0A37 /* ExtractionTests.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ExtractionTests.swift; sourceTree = "<group>"; };
+		0317A3DD9556B040802F4468 /* PaginationTests.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = PaginationTests.swift; sourceTree = "<group>"; };
+		6D5F420BEF26622AB3049D4A /* ReflowModelTests.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ReflowModelTests.swift; sourceTree = "<group>"; };
+		6484D9E56E8450240BA59405 /* SyntheticPDF.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = SyntheticPDF.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F165A7AE1A13FBD7102A420 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDFFFC11406E35E470700E7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E2C2D148CD03FDE80E5926A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				09EB779E23AA3E01CFDE942A /* App */,
+				CE10FB66578CDD4F81DC09C1 /* Engine */,
+				EFB27F67EEF5986EBCF42F8F /* Export */,
+				CCC94B0F3E072391A35227C8 /* Import */,
+				7F1AC5C25BD361C100381EA4 /* Models */,
+				F393F927BCB2AE2D7E433830 /* Reader */,
+				91D54BE7A5885361D99E268A /* Resources */,
+				7BD357B575788B1935F95E61 /* Store */,
+				D0D65D5DCA5BB7D88995EBFF /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		8AEC345AF92FEBA935540FBF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9F3D4F2845888A6042D36EB8 /* ExportTests.swift */,
+				4B4C4BCF2D8D0A546A8C0A37 /* ExtractionTests.swift */,
+				0317A3DD9556B040802F4468 /* PaginationTests.swift */,
+				6D5F420BEF26622AB3049D4A /* ReflowModelTests.swift */,
+				6484D9E56E8450240BA59405 /* SyntheticPDF.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		09EB779E23AA3E01CFDE942A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F5C88043EA127754E25B6FB8 /* AppPaths.swift */,
+				21E88FDBD671A4924AE1C9BD /* InkwellApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		CE10FB66578CDD4F81DC09C1 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				F2423BD18660CE2B696494AF /* LayoutAnalysis.swift */,
+				F41279C5A905ED8D453407F7 /* PDFTextExtractor.swift */,
+				7442924AF3D313DAA4C48444 /* Paginator.swift */,
+				1C34F6FF797A8E02BA433CF6 /* ReaderTheme.swift */,
+				998F20B8D68E5254F2E48D48 /* ReflowBuilder.swift */,
+				B3C531070D6A5180BB6A0F14 /* ReflowCache.swift */,
+				2C40DB942EA8947E1A206DC0 /* ReflowModel.swift */,
+				77BC4B0D4F9A1A3F6643FC10 /* ReflowRenderer.swift */,
+				5C717774596CD3E52007529F /* ReflowTypography.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		EFB27F67EEF5986EBCF42F8F /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				3862EFB2FA2E5E5052B498DA /* ExportService.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		CCC94B0F3E072391A35227C8 /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				6601DC8E315E52C326315668 /* ImportService.swift */,
+			);
+			path = Import;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		7F1AC5C25BD361C100381EA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14E74EA721FCFA148009E3C1 /* Annotation.swift */,
+				42D9D8C8399B0066A53B7ABC /* Book.swift */,
+				51AF008DD61CB284544A5C18 /* Locator.swift */,
+				F40C271CB78F7AC81CC3AE33 /* ReaderSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		F393F927BCB2AE2D7E433830 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				29596FFFE2CC84FF71BABB98 /* ContentsSheet.swift */,
+				74DDAFB2D29D17030A605545 /* HighlightsSheet.swift */,
+				ECAE1C9DC303C4EE87928EC5 /* PDFPageContainer.swift */,
+				A06A9262F1F2015B3BFC5248 /* ReaderDocument.swift */,
+				6842E90A7823235EB5DF2D9C /* ReaderSettingsSheet.swift */,
+				0848AEF7EC517DFAE6650AFE /* ReaderView.swift */,
+				A264C31BF426782D9E3F80B2 /* ReflowPageContainer.swift */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		91D54BE7A5885361D99E268A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				68D468A6CA1168E9C8DDA914 /* Assets.xcassets */,
+				91029AAA1687A8CB3DBA3C51 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		7BD357B575788B1935F95E61 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				6BC4448FEBBC44A26879F235 /* JSONCoders.swift */,
+				C6098A7135B1B9D2BE706161 /* LibraryStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		D0D65D5DCA5BB7D88995EBFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02FA4F3EFDB5FBF6CD2C2644 /* CoverImage.swift */,
+				BD00D5E36B29AE1DD1137AF8 /* LibraryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		433D647A17039DC680DEAE8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = {};
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXGroup section */
+		2A44C54E23411059C3A1A1E1 = {
+			isa = PBXGroup;
+			children = (
+				0E2C2D148CD03FDE80E5926A /* Sources */,
+				8AEC345AF92FEBA935540FBF /* Tests */,
+				433D647A17039DC680DEAE8F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EAF6B1C573B98DE03975706 /* Inkwell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C57B8E19E49BC7C33EC0693D;
+			buildPhases = (
+				0125729B289580691F777534 /* Sources */,
+				7F165A7AE1A13FBD7102A420 /* Frameworks */,
+				4E0C9147B052EF927708EC9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Inkwell;
+			productName = Inkwell;
+			productReference = A612554AFBDBB78BBE69496E /* Inkwell.app */;
+			productType = "com.apple.product-type.application";
+		};
+		153CD4E96CF9727670E94A44 /* InkwellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF7A738ABAC4119AE158E1D4;
+			buildPhases = (
+				ADAF59EBAF8FEAE5E08B2834 /* Sources */,
+				BDFFFC11406E35E470700E7C /* Frameworks */,
+				C89B2682EBB8C8C596DD5ED0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49854C338A5A232B950649D3 /* PBXTargetDependency */,
+			);
+			name = InkwellTests;
+			productName = InkwellTests;
+			productReference = 01E150132E130BC0C2427E78 /* InkwellTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2BAB539C9D4DFD6131F3ED0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					1EAF6B1C573B98DE03975706 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					153CD4E96CF9727670E94A44 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 1EAF6B1C573B98DE03975706;
+					};
+				};
+			};
+			buildConfigurationList = 887D4B5F61EA6AAAF609F3AC;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A44C54E23411059C3A1A1E1;
+			productRefGroup = 433D647A17039DC680DEAE8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EAF6B1C573B98DE03975706 /* Inkwell */,
+				153CD4E96CF9727670E94A44 /* InkwellTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E0C9147B052EF927708EC9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAEEF900FDB178696055791F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C89B2682EBB8C8C596DD5ED0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0125729B289580691F777534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EF54DB7702701FACDC5E73A /* AppPaths.swift in Sources */,
+				B79E0C9CB552E582A526096E /* InkwellApp.swift in Sources */,
+				B34AD62C5F4B9B8F270BC5BF /* LayoutAnalysis.swift in Sources */,
+				6A88F363939CC982DDD48AD2 /* PDFTextExtractor.swift in Sources */,
+				CD4A5591CCDE1CC46F9A556A /* Paginator.swift in Sources */,
+				12BA34EC649533C877B2E24F /* ReaderTheme.swift in Sources */,
+				3E461E4134BBBBAABEDBBE6D /* ReflowBuilder.swift in Sources */,
+				FD38CD89D4CDFE3800D91FC7 /* ReflowCache.swift in Sources */,
+				11AA07937A2CD1D5EF1B074C /* ReflowModel.swift in Sources */,
+				C61D71BFB21D034E80D6AB34 /* ReflowRenderer.swift in Sources */,
+				FD96AE3C083A54ADF7C36B55 /* ReflowTypography.swift in Sources */,
+				89E9136E60D28DD71F4955F7 /* ExportService.swift in Sources */,
+				2DFEF2220999052FDA88F893 /* ImportService.swift in Sources */,
+				A76AD1204D27217395A0FC1D /* Annotation.swift in Sources */,
+				399A226D308E8EB83E594E43 /* Book.swift in Sources */,
+				A99B0F6493938FFDBFFDF189 /* Locator.swift in Sources */,
+				6B0AAA471002F205AF91BC0D /* ReaderSettings.swift in Sources */,
+				E025ACDC541C8F5568103EFD /* ContentsSheet.swift in Sources */,
+				D79D4CAA727708ED79DB2C3E /* HighlightsSheet.swift in Sources */,
+				629C56430DDB2228D04E58B3 /* PDFPageContainer.swift in Sources */,
+				9740C43BE3A64086754F7BEB /* ReaderDocument.swift in Sources */,
+				0CDC5328C0E6319D3CA7A933 /* ReaderSettingsSheet.swift in Sources */,
+				56E0753B4FED10748FC3F4C8 /* ReaderView.swift in Sources */,
+				417CB0C8A197B992BBFDFC0F /* ReflowPageContainer.swift in Sources */,
+				9397EF392464A7FFDDC8E01F /* JSONCoders.swift in Sources */,
+				A34ACEFA546CACD3CAF25AC1 /* LibraryStore.swift in Sources */,
+				A2123764709EE37D8B1A951E /* CoverImage.swift in Sources */,
+				F9E0BADFA6DBCF70682EFCA2 /* LibraryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADAF59EBAF8FEAE5E08B2834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B699C8FAAAC409E5A460A42 /* ExportTests.swift in Sources */,
+				24D3B955CAB44EA470C7582B /* ExtractionTests.swift in Sources */,
+				A8BFE95A83D1D25082E0DC29 /* PaginationTests.swift in Sources */,
+				0395672FC7158849A623BA8E /* ReflowModelTests.swift in Sources */,
+				D8A916D8551AFA0C1085424B /* SyntheticPDF.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49854C338A5A232B950649D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EAF6B1C573B98DE03975706 /* Inkwell */;
+			targetProxy = FF8100DB899D8BF1D517F5BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BCD2CDAF0FF8707D37CECEC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1 $(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCBuildConfiguration section */
+		31F88ED80F52B5272F4E901E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCBuildConfiguration section */
+		8084D1E8212BC9FC71BA7476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCBuildConfiguration section */
+		0404E24B139A962F4A181807 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCBuildConfiguration section */
+		424437003196596881C04385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inkwell.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inkwell";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCBuildConfiguration section */
+		2F38E958D3B76B1D16DD1BAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafid.inkwell.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inkwell.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inkwell";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		887D4B5F61EA6AAAF609F3AC /* Build configuration list for PBXProject "Inkwell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCD2CDAF0FF8707D37CECEC7 /* Debug */,
+				31F88ED80F52B5272F4E901E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C57B8E19E49BC7C33EC0693D /* Build configuration list for PBXNativeTarget "Inkwell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8084D1E8212BC9FC71BA7476 /* Debug */,
+				0404E24B139A962F4A181807 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF7A738ABAC4119AE158E1D4 /* Build configuration list for PBXNativeTarget "InkwellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				424437003196596881C04385 /* Debug */,
+				2F38E958D3B76B1D16DD1BAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = B2BAB539C9D4DFD6131F3ED0 /* Project object */;
+}
